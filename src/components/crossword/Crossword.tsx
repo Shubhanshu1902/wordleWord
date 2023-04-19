@@ -244,7 +244,7 @@ export const Crossword = React.forwardRef<Handle, Props>(({ crosswordIndex, onMo
                 y={cell.row * squareSize + numberOffset + margin}
                 textAnchor="start"
                 dominantBaseline="hanging"
-                style={{ fontSize: '50%', fill: numberColor, userSelect: 'none' }}
+                style={{ fontSize: '25%', fill: numberColor, userSelect: 'none' }}
               >{cell.number}</text>
             )}
             {letter && (
