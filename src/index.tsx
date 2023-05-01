@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 import { ToastContainer } from 'react-toastify'
-import Spinner from './components/shared/spinner'
 import * as smoothscroll from 'smoothscroll-polyfill'
 // import ErrorBoundry from './components/errors/ErrorBoundry'
 import * as Sentry from '@sentry/react'
@@ -41,7 +40,6 @@ ReactDOM.render(
           <Suspense
             fallback={
               <div className="w-screen h-screen flex justify-center items-center">
-                <Spinner color="indigo-600" size={30} />
               </div>
             }
           >

@@ -39,18 +39,12 @@ import {
   WordInput,
 } from '../types'
 import { useGameState } from '../redux/hooks/useGameState'
-import { SubmitModal } from './modals/SubmitModal'
 import { otherDirection } from '../lib/crossword-utils'
 // import { SettingsModal } from './modals/SettingsModal'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
 import { setPencilMode } from '../redux/slices/settingsSlice'
 import { markFirstRender, setOpenModal } from '../redux/slices/navigationSlice'
-import { useStats } from '../redux/hooks/useStats'
-import {
-  updateStreakWithLoss,
-  updateStreakWithWin,
-} from '../redux/slices/statsSlice'
 import crosswords from '../constants/crosswords'
 import { crosswordIndex as defaultIndex } from '../lib/utils'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -111,12 +105,6 @@ const Crosswordle: React.FC = () => {
   const { darkMode, pencilMode, showTimer } = useSelector(
     (state: RootState) => state.settings
   )
-  const { totalGames } = useStats()
-
-  // Open help modal if they have never completed a game
-  useEffect(() => {
-    if (firstRender && totalGames === 0) dispatch(setOpenModal('help'))
-  }, [totalGames, dispatch, firstRender])
 
   // Open share modal if they have already finished this game
   useEffect(() => {
@@ -276,12 +264,10 @@ const Crosswordle: React.FC = () => {
     const totalGuesses = getTotalGuesses(guesses)
 
     if (gameLost) {
-      dispatch(updateStreakWithLoss(crosswordIndex))
       crosswordRef?.current?.reveal()
     }
 
     if (crosswordCorrect) {
-      dispatch(updateStreakWithWin(crosswordIndex))
       win()
     }
   }
@@ -420,7 +406,6 @@ const Crosswordle: React.FC = () => {
         {/* <HelpModal />
         <HelpModal onlyKeyboard={true} /> */}
         {/* <SettingsModal /> */}
-        <SubmitModal />
         <Modal name="notice" title="Updates to today's puzzle">
           <p className="text-gray-400">
             Today's puzzle originally had a typo "ONIOM" instead of "ONION". If

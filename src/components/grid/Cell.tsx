@@ -1,6 +1,5 @@
 import { CharStatus } from '../../lib/statuses'
 import classnames from 'classnames'
-import { useWindowHeight } from '@react-hook/window-size/throttled'
 import { RootState } from '../../redux/store'
 import { useSelector } from 'react-redux'
 
@@ -13,7 +12,6 @@ type Props = {
 }
 
 export const Cell = ({ value, status, mode = 'input', size = 'lg', isFocused = false }: Props) => {
-  const height = useWindowHeight();
   const highContrastMode = useSelector((state: RootState) => state.settings.highContrastMode);
 
   const classes = classnames(
