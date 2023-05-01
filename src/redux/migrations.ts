@@ -1,5 +1,3 @@
-import { endOfToday, endOfYesterday } from "date-fns";
-import { getTodaysPuzzleIndex } from "../lib/utils";
 import { RootState } from "./store";
 
 const initialState : Partial<RootState> = {
