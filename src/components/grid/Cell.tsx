@@ -1,6 +1,5 @@
 import { CharStatus } from '../../lib/statuses'
 import classnames from 'classnames'
-import { useMediaBreakpoints } from '../../lib/hooks'
 import { useWindowHeight } from '@react-hook/window-size/throttled'
 import { RootState } from '../../redux/store'
 import { useSelector } from 'react-redux'
@@ -14,7 +13,6 @@ type Props = {
 }
 
 export const Cell = ({ value, status, mode = 'input', size = 'lg', isFocused = false }: Props) => {
-  const isMobile = useMediaBreakpoints('md', 'down');
   const height = useWindowHeight();
   const highContrastMode = useSelector((state: RootState) => state.settings.highContrastMode);
 
@@ -33,9 +31,7 @@ export const Cell = ({ value, status, mode = 'input', size = 'lg', isFocused = f
       'bg-cyan-500 text-white border-cyan-500': status === 'present' && highContrastMode,
       'w-14 h-14 text-lg': size === 'lg',
       'w-5 h-5 text-sm': size === 'sm',
-      'w-10 h-10 text-lg': size === 'lg' && isMobile,
       'border-yellow-300': isFocused,
-      'short-tolerant': !isMobile && height > 600,
     }
   )
 

@@ -6,7 +6,7 @@ import type {
 } from '../types';
 
 type RowOrCol = 'row' | 'col';
-
+  
 const directionInfo: Record<
   Direction,
   { primary: RowOrCol; orthogonal: RowOrCol }
@@ -21,6 +21,7 @@ const directionInfo: Record<
   },
 };
 
+// Get direction
 export const bothDirections = Object.keys(directionInfo) as Direction[];
 
 export function isAcross(direction: Direction) {

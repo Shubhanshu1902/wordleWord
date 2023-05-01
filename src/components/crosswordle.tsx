@@ -38,7 +38,6 @@ import {
   UsedCellData,
   WordInput,
 } from '../types'
-import { trackGameEnd, trackGuess } from '../lib/analytics'
 import { useGameState } from '../redux/hooks/useGameState'
 import { SubmitModal } from './modals/SubmitModal'
 import { otherDirection } from '../lib/crossword-utils'
@@ -56,7 +55,6 @@ import crosswords from '../constants/crosswords'
 import { crosswordIndex as defaultIndex } from '../lib/utils'
 import { useNavigate, useParams } from 'react-router-dom'
 import NotFound from './NotFound'
-import { TimerHelpModal } from './modals/TimerHelpModal'
 import { incrementTimer, startTimer } from '../redux/slices/wordleSlice'
 import { useInterval } from '../lib/useInterval'
 import cn from 'classnames'
@@ -140,10 +138,6 @@ const Crosswordle: React.FC = () => {
   useEffect(() => {
     loadValidWords()
   }, [loadValidWords])
-
-  useWindowListener('keyup', (e: KeyboardEvent) => {
-    if (e.key === 'Shift') togglePencilMode()
-  })
 
   // After keyboard input move to the next square where you can type
   const moveToIndex = useCallback(
@@ -233,7 +227,6 @@ const Crosswordle: React.FC = () => {
   const addGuess = (guess: string) => {
     if (shareHistory.length === 0)
       dispatch(startTimer({ index: crosswordIndex }))
-    trackGuess(crosswordIndex, guess)
     addGuessToState(focusedDirection, focusedNumber, guess)
 
     crosswordRef.current?.guessWord(currentGuess)
@@ -283,13 +276,11 @@ const Crosswordle: React.FC = () => {
     const totalGuesses = getTotalGuesses(guesses)
 
     if (gameLost) {
-      trackGameEnd(crosswordIndex, 'game_lost', totalGuesses)
       dispatch(updateStreakWithLoss(crosswordIndex))
       crosswordRef?.current?.reveal()
     }
 
     if (crosswordCorrect) {
-      trackGameEnd(crosswordIndex, 'game_won', totalGuesses)
       dispatch(updateStreakWithWin(crosswordIndex))
       win()
     }
@@ -430,7 +421,6 @@ const Crosswordle: React.FC = () => {
         <HelpModal onlyKeyboard={true} /> */}
         {/* <SettingsModal /> */}
         <SubmitModal />
-        <TimerHelpModal />
         <Modal name="notice" title="Updates to today's puzzle">
           <p className="text-gray-400">
             Today's puzzle originally had a typo "ONIOM" instead of "ONION". If
