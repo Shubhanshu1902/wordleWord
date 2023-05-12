@@ -6,7 +6,6 @@ import last from 'lodash/last';
 import { useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { crosswordIndex, dateFromPuzzleIndex } from '../../lib/utils';
-import crosswords from '../../constants/crosswords';
 
 interface Props {
   index: number;
@@ -17,7 +16,6 @@ const ArchiveElement : React.FC<Props> = ({ index }) => {
   const [gridData] = useGridData(index);
   const shareHistory = useSelector((state: RootState) => state.wordle.shareHistories[index]);
   const cellColors = useMemo(() => last(shareHistory) || {}, [shareHistory]);
-  const crosswordData = crosswords[index];
 
   const onClick = useCallback(() => {
     if (index === crosswordIndex) {
