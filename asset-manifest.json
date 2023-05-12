@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/wordleWord/static/css/main.1ffb03ae.css",
-    "main.js": "/wordleWord/static/js/main.fcaaef33.js",
+    "main.css": "/wordleWord/static/css/main.50dc70c5.css",
+    "main.js": "/wordleWord/static/js/main.f76a35a5.js",
     "static/js/465.e02edb8e.chunk.js": "/wordleWord/static/js/465.e02edb8e.chunk.js",
     "static/js/787.c1edf574.chunk.js": "/wordleWord/static/js/787.c1edf574.chunk.js",
     "static/css/836.56f84f38.chunk.css": "/wordleWord/static/css/836.56f84f38.chunk.css",
     "static/js/836.6b5c34b7.chunk.js": "/wordleWord/static/js/836.6b5c34b7.chunk.js",
-    "static/js/34.bb9df099.chunk.js": "/wordleWord/static/js/34.bb9df099.chunk.js",
+    "static/js/34.7cc867ba.chunk.js": "/wordleWord/static/js/34.7cc867ba.chunk.js",
     "static/js/466.41634041.chunk.js": "/wordleWord/static/js/466.41634041.chunk.js",
     "static/js/362.c2cc050b.chunk.js": "/wordleWord/static/js/362.c2cc050b.chunk.js",
     "static/js/987.9befdc86.chunk.js": "/wordleWord/static/js/987.9befdc86.chunk.js",
     "static/js/504.b7d02d8b.chunk.js": "/wordleWord/static/js/504.b7d02d8b.chunk.js",
     "index.html": "/wordleWord/index.html",
-    "main.1ffb03ae.css.map": "/wordleWord/static/css/main.1ffb03ae.css.map",
-    "main.fcaaef33.js.map": "/wordleWord/static/js/main.fcaaef33.js.map",
+    "main.50dc70c5.css.map": "/wordleWord/static/css/main.50dc70c5.css.map",
+    "main.f76a35a5.js.map": "/wordleWord/static/js/main.f76a35a5.js.map",
     "465.e02edb8e.chunk.js.map": "/wordleWord/static/js/465.e02edb8e.chunk.js.map",
     "787.c1edf574.chunk.js.map": "/wordleWord/static/js/787.c1edf574.chunk.js.map",
     "836.56f84f38.chunk.css.map": "/wordleWord/static/css/836.56f84f38.chunk.css.map",
     "836.6b5c34b7.chunk.js.map": "/wordleWord/static/js/836.6b5c34b7.chunk.js.map",
-    "34.bb9df099.chunk.js.map": "/wordleWord/static/js/34.bb9df099.chunk.js.map",
+    "34.7cc867ba.chunk.js.map": "/wordleWord/static/js/34.7cc867ba.chunk.js.map",
     "466.41634041.chunk.js.map": "/wordleWord/static/js/466.41634041.chunk.js.map",
     "362.c2cc050b.chunk.js.map": "/wordleWord/static/js/362.c2cc050b.chunk.js.map",
     "987.9befdc86.chunk.js.map": "/wordleWord/static/js/987.9befdc86.chunk.js.map",
     "504.b7d02d8b.chunk.js.map": "/wordleWord/static/js/504.b7d02d8b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ffb03ae.css",
-    "static/js/main.fcaaef33.js"
+    "static/css/main.50dc70c5.css",
+    "static/js/main.f76a35a5.js"
   ]
 }
